@@ -1,0 +1,62 @@
+services:
+  # PostgreSQL database service
+  db:
+    image: postgres:13
+    container_name: postgres_container
+    env_file:
+      - ./.env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  # Express server service
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    command: "sh -c 'npx sequelize-cli db:migrate && npm run dev'"
+    container_name: server_container
+    env_file:
+      - ./.env
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      POSTGRES_HOST: db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      DIALECT: ${DIALECT}
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    networks:
+      - app-network
+    volumes:
+      - ./server:/usr/src/app
+
+  # React client service
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: client_container
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    volumes:
+      - ./client:/usr/src/app
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

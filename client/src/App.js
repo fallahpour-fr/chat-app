@@ -6,13 +6,12 @@ import io from 'socket.io-client';
 import Chat from './page/chat';
 
 
-const socket = io.connect('http://localhost:4000');
+const socket = io.connect('http://localhost:5000');
 
 function App() {
   const [username, setUsername] = useState('');
   const [room, setRoom] = useState('');
-   
-  console.log('room',room,'username',username)
+
  
   return (
     <Router>

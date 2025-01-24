@@ -54,7 +54,6 @@ io.on('connection', (socket) => {
     // Get last 100 messages sent in the chat room
     getMessage(room)
       .then((last100Messages) => {
-        console.log('latest messages', last100Messages);
         socket.emit('last_100_messages', last100Messages);
       })
       .catch((err) => console.log(err));
@@ -100,4 +99,4 @@ io.on('connection', (socket) => {
 
 })
 
-server.listen(4000, () => 'Server is running on port 4000');
+server.listen(5000, () => 'Server is running on port 5000');

@@ -16,7 +16,6 @@ const Messages = ({ socket }) => {
   // Runs whenever a socket event is recieved from the server
   useEffect(() => {
     socket.on('receive_message', (data) => {
-      console.log(data);
       setMessagesReceived((state) => [
         ...state,
         {
@@ -35,9 +34,7 @@ const Messages = ({ socket }) => {
   useEffect(() => {
     // Last 100 messages sent in the chat room (fetched from the db in backend)
     socket.on('last_100_messages', (last100Messages) => {
-      try {
-        console.log('Received messages:', last100Messages);
-  
+      try {  
         // Check if the message is not empty before attempting to parse
         if (last100Messages && last100Messages !== '[]') {
           const parsedMessages = JSON.parse(last100Messages);
