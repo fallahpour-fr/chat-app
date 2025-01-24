@@ -9,9 +9,17 @@ The project includes real time conection with socket.io in client side and serve
 - Dockerized:
 Fully dockerized to ensure an isolated and reproducible environment for running the application across various systems.
 
+## Technologies
+-Express.js
+-Postgres-db
+-Sequalize ORM
+-Docker
+-React.js
+-Socker.io
+
 ## Table of Contents
-1. [Run Local](#RunLocal)
-2. [Run With Docker](#dockerize)
+1. [Run Local](#Run Local)
+2. [Run With Docker](#Run With Docker)
 
 ## Run Local
 Step-by-step instructions for setting up the project:
@@ -29,8 +37,8 @@ npm start
 
 ## Run With Docker
 
-install [Docker Desktop Ubuntu](#https://docs.docker.com/desktop/setup/install/mac-install/) or 
-[Docker Desktop windows](#https://docs.docker.com/desktop/setup/install/windows-install/)
+install [Docker Desktop Ubuntu](https://docs.docker.com/desktop/setup/install/mac-install/) or 
+[Docker Desktop windows](https://docs.docker.com/desktop/setup/install/windows-install/)
 
 Then run command bellow:
 ```bash
