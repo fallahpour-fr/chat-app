@@ -3,6 +3,8 @@ const app = express();
 const http = require('http');
 const cors = require('cors');
 const { Server } = require('socket.io');
+require('dotenv').config();
+const saveMessage = require('./services/savemessage');
 
 app.use(cors());
 
@@ -16,7 +18,6 @@ const io = new Server(server, {
 });
 
 const CHAT_BOT = 'ChatBot';
-let chatroom = '';
 let allUsers = [];
 let chatRoomUsers
 
@@ -50,6 +51,14 @@ io.on('connection', (socket) => {
     socket.emit('chatroom_users', chatRoomUsers);
   });
 
+  // send message
+  socket.on('send_message', (data) => {
+    const { message, username, room, __createdtime__ } = data;
+    io.in(room).emit('receive_message', data);
+    saveMessage(message, username, room, __createdtime__)
+      .then((response) => console.log('res',response))
+      .catch((err) => console.log(err));
+  });
 
 
 })
