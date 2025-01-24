@@ -17,7 +17,7 @@ Fully dockerized to ensure an isolated and reproducible environment for running 
 -React.js
 -Socker.io
 
-## Table of Contents
+## Run App
 1. [Run Local](#Run-Local)
 2. [Run With Docker](#Run-With-Docker)
 
