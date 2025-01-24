@@ -18,8 +18,8 @@ Fully dockerized to ensure an isolated and reproducible environment for running 
 -Socker.io
 
 ## Table of Contents
-1. [Run Local](#Run Local)
-2. [Run With Docker](#Run With Docker)
+1. [Run Local](#Run-Local)
+2. [Run With Docker](#Run-With-Docker)
 
 ## Run Local
 Step-by-step instructions for setting up the project:
