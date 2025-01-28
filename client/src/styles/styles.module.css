@@ -4,14 +4,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(63, 73, 204);
+    /* background: rgb(63, 73, 204); */
+    /* background: linear-gradient(180deg, #394C64 0%, #212D3E 100%); */
+    background: linear-gradient(180deg, #45ffe7 0%, rgba(255,255,255,0.1) 100%);
 }
 
 .formContainer {
     width: 400px;
     margin: 0 auto 0 auto;
     padding: 32px;
-    background: lightblue;
+    /* background: lightblue; */
+    background:#1b6298d4;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -27,6 +30,10 @@
     font-size: 0.9rem;
 }
 
+h1{
+    color: white;
+}
+
 .input option {
     margin-top: 20px;
 }
@@ -36,8 +43,10 @@
 }
 
 .chatContainer {
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 100%;
+    padding: 10px;
+    height: 100vh;
+    margin: 0;
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 20px;
@@ -45,7 +54,7 @@
 
 /* Room and users component */
 .roomAndUsersColumn {
-    border-right: 1px solid #dfdfdf;
+    border-right: 1px solid rgb(0, 24, 111);
 }
 
 .roomTitle {
@@ -97,13 +106,17 @@
 
 /* Message input and button */
 .sendMessageContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
     padding: 16px 20px 20px 16px;
 }
 
 .messageInput {
-    padding: 14px;
-    margin-right: 16px;
-    width: 60%;
+    padding: 14px 14px;
+    margin-right: 8px;
+    width: 80%;
     border-radius: 6px;
     border: 1px solid rgb(153, 217, 234);
     font-size: 0.9rem;

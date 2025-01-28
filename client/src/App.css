@@ -6,7 +6,8 @@ html * {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: rgb(63, 73, 204);
+    /* background: rgb(63, 73, 204); */
+    background: linear-gradient(180deg, rgb(63, 73, 204) 0%, rgba(95, 124, 211, 0.438) 100%);;
   }
 
   ::-webkit-scrollbar {
@@ -25,12 +26,13 @@ html * {
     background-color: #a8bbbf;
   }
   .btn {
-    padding: 14px 14px;
+    padding: 10px 10px;
     border-radius: 6px;
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
     border: none;
+    width: 30%;
   }
   .btn-outline {
     color: rgb(153, 217, 234);

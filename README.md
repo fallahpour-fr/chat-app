@@ -25,6 +25,12 @@ Fully dockerized to ensure an isolated and reproducible environment for running 
 Step-by-step instructions for setting up the project:
 ```bash
 git clone https://github.com/fallahpour-fr/chat-app.git
+```
+create database with postgres table
+```bash
+docker run --name mydb -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydb -p 5432:5432 -d postgres
+```
+```bash
 cd server
 npm install
 npm run dev
